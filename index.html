@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="main-page">
+        <div class="headers">
+            <h1>POMODORO</h1>
+            <div id="hamburger" onclick="displayNavbar()"><i class="fa-solid fa-bars-staggered"></i></div>
+        </div>
+        <div class="bigger">
+            <div class="big-circle">
+                <div class="time">
+                    25:00
+                </div>
+            </div>
+            <div class="main-buttons">
+                <button type="button" id="restart"><i class="fa fa-rotate-right"></i></button>
+                <button type="button" id="start"><i class="fa fa-play"></i></button>
+                <button type="button" id="info" onclick="displayInfo()"><i class="fa fa-circle-info"></i></button>
+            </div>
+        </div>
+        <div class="about">
+            <p class="about-para">This popular time management method asks you to alternate pomodoros — focused work
+                sessions — with frequent short breaks to promote sustained concentration and stave off mental
+                fatigue.</p>
+            <span class="steps stepflex">Step 1 <p class="step-para">Pick a task</p></span>
+            <span class="steps stepflex">Step 2 <p class="step-para">Set the timer</p></span>
+            <span class="steps stepflex">Step 3 <p class="step-para">Work on it until time is up</p></span>
+            <span class="steps stepflex">Step 4 <p class="step-para">Take a 5 minute break</p></span>
+            <span class="steps stepflex">Step 5 <p class="step-para">Every 4 pomodoros, take a 15-30 minute break</p></span>
+        </div>
+    </section>
+    <div class="options" id="options">
+        <p class="options-headings">Work time</p>
+        <div id="timer">
+            <p id="timeDisplay">25</p>
+            <input type="range" id="set-time" min="1" max="60" oninput="updateTime()"/>
+        </div>
+        <p class="options-headings">Short break</p>
+        <div id="sbreak">
+            <p id="sbreakDisplay">5</p>
+            <input type="range" id="set-shortbreak" min="1" max="15" oninput="updateTime()" />
+        </div>
+        <p class="options-headings">Long break</p>
+        <div id="lbreak">
+            <p id="lbreakDisplay">30</p>
+            <input type="range" id="set-longbreak" min="15" max="45" oninput="updateTime()"/>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
